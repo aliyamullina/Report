@@ -22,9 +22,66 @@ Partial Class Form1
     'Не изменяйте ее в редакторе исходного кода.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        components = New System.ComponentModel.Container
+        Me.ListBox1 = New System.Windows.Forms.ListBox()
+        Me.ListBox2 = New System.Windows.Forms.ListBox()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.FileOpenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MenuStrip1.SuspendLayout()
+        Me.SuspendLayout()
+        '
+        'ListBox1
+        '
+        Me.ListBox1.Dock = System.Windows.Forms.DockStyle.Left
+        Me.ListBox1.FormattingEnabled = True
+        Me.ListBox1.Location = New System.Drawing.Point(0, 24)
+        Me.ListBox1.Name = "ListBox1"
+        Me.ListBox1.Size = New System.Drawing.Size(310, 426)
+        Me.ListBox1.TabIndex = 0
+        '
+        'ListBox2
+        '
+        Me.ListBox2.Dock = System.Windows.Forms.DockStyle.Right
+        Me.ListBox2.FormattingEnabled = True
+        Me.ListBox2.Location = New System.Drawing.Point(328, 24)
+        Me.ListBox2.Name = "ListBox2"
+        Me.ListBox2.Size = New System.Drawing.Size(472, 426)
+        Me.ListBox2.TabIndex = 1
+        '
+        'MenuStrip1
+        '
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileOpenToolStripMenuItem})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(800, 24)
+        Me.MenuStrip1.TabIndex = 2
+        Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'FileOpenToolStripMenuItem
+        '
+        Me.FileOpenToolStripMenuItem.Name = "FileOpenToolStripMenuItem"
+        Me.FileOpenToolStripMenuItem.Size = New System.Drawing.Size(67, 20)
+        Me.FileOpenToolStripMenuItem.Text = "File open"
+        '
+        'Form1
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.ListBox2)
+        Me.Controls.Add(Me.ListBox1)
+        Me.Controls.Add(Me.MenuStrip1)
+        Me.MainMenuStrip = Me.MenuStrip1
+        Me.Name = "Form1"
         Me.Text = "Form1"
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
+        Me.ResumeLayout(False)
+        Me.PerformLayout()
+
     End Sub
+
+    Friend WithEvents ListBox1 As ListBox
+    Friend WithEvents ListBox2 As ListBox
+    Friend WithEvents MenuStrip1 As MenuStrip
+    Friend WithEvents FileOpenToolStripMenuItem As ToolStripMenuItem
 End Class
