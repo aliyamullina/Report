@@ -1,8 +1,8 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class UserControl1
-    Inherits System.Windows.Forms.UserControl
+Partial Class Form1
+    Inherits System.Windows.Forms.Form
 
-    'UserControl1 переопределяет метод Dispose для очистки списка компонентов.
+    'Форма переопределяет dispose для очистки списка компонентов.
     <System.Diagnostics.DebuggerNonUserCode()> _
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
@@ -22,9 +22,9 @@ Partial Class UserControl1
     'Не изменяйте ее в редакторе исходного кода.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        components = New System.ComponentModel.Container()
+        components = New System.ComponentModel.Container
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Text = "Form1"
     End Sub
-
 End Class
