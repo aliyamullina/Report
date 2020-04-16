@@ -5,7 +5,6 @@ Public Class Form1
         Try
             'set the openfiledialog properties
             openfile = New OpenFileDialog With {
-                .Filter = "No",
                 .Title = "Select files",
                 .CheckFileExists = True,
                 .Multiselect = True,
