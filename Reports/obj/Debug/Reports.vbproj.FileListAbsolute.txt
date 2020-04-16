@@ -1,0 +1,12 @@
+C:\Users\Packard\Downloads\Report\Reports\bin\Debug\Reports.exe.config
+C:\Users\Packard\Downloads\Report\Reports\bin\Debug\Reports.exe
+C:\Users\Packard\Downloads\Report\Reports\bin\Debug\Reports.pdb
+C:\Users\Packard\Downloads\Report\Reports\bin\Debug\Reports.xml
+C:\Users\Packard\Downloads\Report\Reports\obj\Debug\Reports.vbprojAssemblyReference.cache
+C:\Users\Packard\Downloads\Report\Reports\obj\Debug\Reports.Form1.resources
+C:\Users\Packard\Downloads\Report\Reports\obj\Debug\Reports.Resources.resources
+C:\Users\Packard\Downloads\Report\Reports\obj\Debug\Reports.vbproj.GenerateResource.cache
+C:\Users\Packard\Downloads\Report\Reports\obj\Debug\Reports.vbproj.CoreCompileInputs.cache
+C:\Users\Packard\Downloads\Report\Reports\obj\Debug\Reports.exe
+C:\Users\Packard\Downloads\Report\Reports\obj\Debug\Reports.xml
+C:\Users\Packard\Downloads\Report\Reports\obj\Debug\Reports.pdb
