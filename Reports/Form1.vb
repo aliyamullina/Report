@@ -14,17 +14,14 @@ Public Class Form1
             }
 
             If openfile.ShowDialog = Windows.Forms.DialogResult.OK Then
-                openfile.SafeFileNames.Count()
+                Dim vName = openfile.SafeFileNames.Count()
                 For i As Integer = 0 To openfile.SafeFileNames.Count() - 1
-                  ListBox1.Items.Add(openfile.SafeFileNames(i))
+                    ListBox1.Items.Add(openfile.SafeFileNames(i))
                     Dim vPath As String = openfile.FileNames(i)
                     ListBox2.Items.Add(vPath)
-                    Dim vReport As TextReader = New StreamReader(vPath)
- 
+                    Dim vReport As TextReader = New StreamReader(vPath, encoding:=System.Text.Encoding.Default)
                     TextBox1.Text &= vReport.ReadToEnd()
-
                     vReport.Close()
-
                 Next
             End If
 
