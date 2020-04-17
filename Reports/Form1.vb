@@ -15,7 +15,7 @@ Public Class Form1
                 openfile.SafeFileNames.Count()
                 For i As Integer = 0 To openfile.SafeFileNames.Count() - 1
                     ListBox1.Items.Add(openfile.SafeFileNames(i))
-                    ListBox2.Items.Add(openfile.FileName(i))
+                    ListBox2.Items.Add(openfile.FileNames(i))
                 Next
             End If
         Catch ex As Exception

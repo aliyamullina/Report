@@ -27,23 +27,26 @@ Partial Class Form1
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileOpenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ListBox3 = New System.Windows.Forms.ListBox()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'ListBox1
         '
+        Me.ListBox1.Dock = System.Windows.Forms.DockStyle.Left
         Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.Location = New System.Drawing.Point(1, 37)
+        Me.ListBox1.Location = New System.Drawing.Point(0, 24)
         Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(247, 394)
+        Me.ListBox1.Size = New System.Drawing.Size(173, 426)
         Me.ListBox1.TabIndex = 0
         '
         'ListBox2
         '
+        Me.ListBox2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ListBox2.FormattingEnabled = True
-        Me.ListBox2.Location = New System.Drawing.Point(381, 37)
+        Me.ListBox2.Location = New System.Drawing.Point(173, 24)
         Me.ListBox2.Name = "ListBox2"
-        Me.ListBox2.Size = New System.Drawing.Size(247, 394)
+        Me.ListBox2.Size = New System.Drawing.Size(810, 426)
         Me.ListBox2.TabIndex = 1
         '
         'MenuStrip1
@@ -51,7 +54,7 @@ Partial Class Form1
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileOpenToolStripMenuItem, Me.ExitToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(800, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(983, 24)
         Me.MenuStrip1.TabIndex = 2
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -67,11 +70,21 @@ Partial Class Form1
         Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(38, 20)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
+        'ListBox3
+        '
+        Me.ListBox3.Dock = System.Windows.Forms.DockStyle.Right
+        Me.ListBox3.FormattingEnabled = True
+        Me.ListBox3.Location = New System.Drawing.Point(589, 24)
+        Me.ListBox3.Name = "ListBox3"
+        Me.ListBox3.Size = New System.Drawing.Size(394, 426)
+        Me.ListBox3.TabIndex = 3
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(983, 450)
+        Me.Controls.Add(Me.ListBox3)
         Me.Controls.Add(Me.ListBox2)
         Me.Controls.Add(Me.ListBox1)
         Me.Controls.Add(Me.MenuStrip1)
@@ -90,4 +103,5 @@ Partial Class Form1
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents FileOpenToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ListBox3 As ListBox
 End Class
