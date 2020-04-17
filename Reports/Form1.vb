@@ -18,7 +18,11 @@ Public Class Form1
                 For i As Integer = 0 To openfile.SafeFileNames.Count() - 1
                     Dim vName = ListBox1.Items.Add(openfile.SafeFileNames(i))
                     Dim vPath = ListBox2.Items.Add(openfile.FileNames(i))
-                    Dim vReport = ListBox3.Items.AddRange(File.ReadAllLines(vPath))
+
+                    Dim vReport As TextReader = New StreamReader(vPath)
+                    TextBox1.Text = vReport.ReadToEnd()
+                    vReport.Close()
+
                 Next
             End If
 
