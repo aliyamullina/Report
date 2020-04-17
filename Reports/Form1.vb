@@ -20,6 +20,7 @@ Public Class Form1
                     Dim vPath = ListBox2.Items.Add(openfile.FileNames(i))
 
                     Dim vReport As TextReader = New StreamReader(vPath)
+                    'Dim vReport As TextReader = New StreamReader("C:\Users\Packard\Downloads\Report\VRES-MKD\Авиахима 53_1 22607876")
                     TextBox1.Text = vReport.ReadToEnd()
                     vReport.Close()
 
