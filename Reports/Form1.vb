@@ -2,6 +2,7 @@
 Public Class Form1
     Private openfile As OpenFileDialog 'window to open files 
     Private Sub FileOpenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FileOpenToolStripMenuItem.Click
+        Dim s As String
         Try
             'set the openfiledialog properties
             openfile = New OpenFileDialog With {
@@ -16,6 +17,10 @@ Public Class Form1
                 For i As Integer = 0 To openfile.SafeFileNames.Count() - 1
                     ListBox1.Items.Add(openfile.SafeFileNames(i))
                     ListBox2.Items.Add(openfile.FileNames(i))
+                    While Not EOF(i)
+                        s = LineInput(i)
+                        ListBox3.Items.Add(s)
+                    End While
                 Next
             End If
         Catch ex As Exception
