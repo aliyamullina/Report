@@ -33,20 +33,18 @@ Partial Class Form1
         '
         'ListBox1
         '
-        Me.ListBox1.Dock = System.Windows.Forms.DockStyle.Left
         Me.ListBox1.FormattingEnabled = True
         Me.ListBox1.Location = New System.Drawing.Point(0, 24)
         Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(173, 426)
+        Me.ListBox1.Size = New System.Drawing.Size(445, 199)
         Me.ListBox1.TabIndex = 0
         '
         'ListBox2
         '
-        Me.ListBox2.Dock = System.Windows.Forms.DockStyle.Left
         Me.ListBox2.FormattingEnabled = True
-        Me.ListBox2.Location = New System.Drawing.Point(173, 24)
+        Me.ListBox2.Location = New System.Drawing.Point(0, 229)
         Me.ListBox2.Name = "ListBox2"
-        Me.ListBox2.Size = New System.Drawing.Size(545, 426)
+        Me.ListBox2.Size = New System.Drawing.Size(445, 225)
         Me.ListBox2.TabIndex = 1
         '
         'MenuStrip1
@@ -73,17 +71,17 @@ Partial Class Form1
         'TextBox1
         '
         Me.TextBox1.Dock = System.Windows.Forms.DockStyle.Right
-        Me.TextBox1.Location = New System.Drawing.Point(724, 24)
+        Me.TextBox1.Location = New System.Drawing.Point(451, 24)
         Me.TextBox1.Multiline = True
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(259, 426)
+        Me.TextBox1.Size = New System.Drawing.Size(532, 437)
         Me.TextBox1.TabIndex = 3
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(983, 450)
+        Me.ClientSize = New System.Drawing.Size(983, 461)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.ListBox2)
         Me.Controls.Add(Me.ListBox1)
