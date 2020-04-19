@@ -28,6 +28,7 @@ Partial Class Form1
         Me.FileOpenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -65,22 +66,31 @@ Partial Class Form1
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(38, 20)
-        Me.ExitToolStripMenuItem.Text = "Exit"
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(46, 20)
+        Me.ExitToolStripMenuItem.Text = "Clear"
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(357, 24)
+        Me.TextBox1.Location = New System.Drawing.Point(354, 24)
         Me.TextBox1.Multiline = True
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(614, 437)
+        Me.TextBox1.Size = New System.Drawing.Size(629, 199)
         Me.TextBox1.TabIndex = 3
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Location = New System.Drawing.Point(354, 229)
+        Me.TextBox2.Multiline = True
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(629, 225)
+        Me.TextBox2.TabIndex = 4
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(983, 461)
+        Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.ListBox2)
         Me.Controls.Add(Me.ListBox1)
@@ -101,4 +111,5 @@ Partial Class Form1
     Friend WithEvents FileOpenToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TextBox2 As TextBox
 End Class

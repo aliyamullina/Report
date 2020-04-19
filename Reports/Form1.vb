@@ -22,9 +22,17 @@ Public Class Form1
 
                     Dim vReport As TextReader = New StreamReader(vPath, encoding:=System.Text.Encoding.Default)
                     TextBox1.Text &= vReport.ReadToEnd()
+                    'TextBox1.Text = String.Join(vbCrLf,  )
+
                     vReport.Close()
 
-                    Dim vSearch As String = "	ERROR" '"	OK"
+                    ' If TextBox1.Text.StartsWith("-") = True Then
+                    ' TextBox1.Text = TextBox2.Lines(i)
+                    'End If
+
+                    '.StartsWith("-")
+
+                    'Dim vSearch As String = "	ERROR" '"	OK"
                     'Dim vComparison As StringComparison = StringComparison
                 Next
             End If
@@ -36,7 +44,10 @@ Public Class Form1
     End Sub
 
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
-        Me.Close()
+        ListBox1.Items.Clear()
+        ListBox2.Items.Clear()
+        TextBox1.Clear()
+        TextBox2.Clear()
     End Sub
 
 End Class
