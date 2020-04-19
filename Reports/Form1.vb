@@ -22,18 +22,16 @@ Public Class Form1
 
                     Dim vReport As TextReader = New StreamReader(vPath, encoding:=System.Text.Encoding.Default)
                     TextBox1.Text &= vReport.ReadToEnd()
-                    'TextBox1.Text = String.Join(vbCrLf,  )
+
+                    For Each vLine As String In From vLine1 In TextBox1.Lines Where vLine1.StartsWith("-")
+                        TextBox1.SelectionStart = TextBox1.Text.IndexOf(vLine)
+                        TextBox1.SelectionLength = vLine.Length
+                        TextBox1.Font = New Font(TextBox1.Font, FontStyle.Bold)
+                    Next
+
 
                     vReport.Close()
 
-                    ' If TextBox1.Text.StartsWith("-") = True Then
-                    ' TextBox1.Text = TextBox2.Lines(i)
-                    'End If
-
-                    '.StartsWith("-")
-
-                    'Dim vSearch As String = "	ERROR" '"	OK"
-                    'Dim vComparison As StringComparison = StringComparison
                 Next
             End If
 

@@ -74,15 +74,15 @@ Partial Class Form1
         Me.TextBox1.Location = New System.Drawing.Point(354, 24)
         Me.TextBox1.Multiline = True
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(629, 199)
+        Me.TextBox1.Size = New System.Drawing.Size(629, 349)
         Me.TextBox1.TabIndex = 3
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(354, 229)
+        Me.TextBox2.Location = New System.Drawing.Point(354, 379)
         Me.TextBox2.Multiline = True
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(629, 225)
+        Me.TextBox2.Size = New System.Drawing.Size(629, 75)
         Me.TextBox2.TabIndex = 4
         '
         'Form1
