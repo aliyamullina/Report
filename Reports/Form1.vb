@@ -19,9 +19,13 @@ Public Class Form1
                     ListBox1.Items.Add(openfile.SafeFileNames(i))
                     Dim vPath As String = openfile.FileNames(i)
                     ListBox2.Items.Add(vPath)
+
                     Dim vReport As TextReader = New StreamReader(vPath, encoding:=System.Text.Encoding.Default)
                     TextBox1.Text &= vReport.ReadToEnd()
                     vReport.Close()
+
+                    Dim vSearch As String = "	ERROR" '"	OK"
+                    'Dim vComparison As StringComparison = StringComparison
                 Next
             End If
 
@@ -34,4 +38,5 @@ Public Class Form1
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
         Me.Close()
     End Sub
+
 End Class
