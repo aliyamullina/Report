@@ -23,7 +23,7 @@ Public Class Form1
                     Dim vReport As TextReader = New StreamReader(vPath, encoding:=System.Text.Encoding.Default)
                     TextBox1.Text &= vReport.ReadToEnd()
 
-                    For Each vLine As String In From vLine1 In TextBox1.Lines Where vLine1.StartsWith("OK")
+                    For Each vLine As String In From vLine1 In TextBox1.Lines Where vLine1.StartsWith("OK") 'ERROR
                         'TextBox1.
                     Next
 
