@@ -23,16 +23,13 @@ Public Class Form1
                     Dim vReport As TextReader = New StreamReader(vPath, encoding:=System.Text.Encoding.Default)
                     TextBox1.Text &= vReport.ReadToEnd()
 
-                    For Each vLine As String In From vLine1 In TextBox1.Lines Where vLine1.StartsWith("-")
-                        TextBox1.SelectionStart = TextBox1.Text.IndexOf(vLine)
-                        TextBox1.SelectionLength = vLine.Length
-                        TextBox1.Font = New Font(TextBox1.Font, FontStyle.Bold)
+                    For Each vLine As String In From vLine1 In TextBox1.Lines Where vLine1.StartsWith("OK")
+                        'TextBox1.
                     Next
-
 
                     vReport.Close()
 
-                Next
+                    Next
             End If
 
         Catch ex As Exception
