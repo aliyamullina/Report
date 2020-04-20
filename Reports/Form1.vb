@@ -23,9 +23,14 @@ Public Class Form1
                     Dim vReport As TextReader = New StreamReader(vPath, encoding:=System.Text.Encoding.Default)
                     TextBox1.Text &= vReport.ReadToEnd()
 
-                    For Each vLine As String In From vLine1 In TextBox1.Lines Where vLine1.StartsWith("OK") 'ERROR
+                    Dim allTxt() As String = IO.File.ReadAllLines(vPath, System.Text.Encoding.Default)
+Dim addTxt = From vLine1 In allTxt Where vLine1.StartsWith(vbTab & "OK") OrElse vLine1.StartsWith(vbTab & "ERROR")
+If addTxt.Count = 0 Then Continue For
+TextBox1.AppendText(String.Join(vbCrLf, addTxt.ToArray) & vbCrLf)
+
+                    'For Each vLine As String In From vLine1 In TextBox1.Lines Where vLine1.StartsWith("OK") 'ERROR
                         'TextBox1.
-                    Next
+                    'Next
 
                     vReport.Close()
 
