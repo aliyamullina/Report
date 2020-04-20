@@ -24,6 +24,7 @@ Public Class Form1
                     Dim addTxt = From vLine1 In allTxt Where vLine1.StartsWith(vbTab & "OK") OrElse vLine1.StartsWith(vbTab & "ERROR")
 
                     If addTxt.Count = 0 Then Continue For
+                    TextBox1.AppendText(openfile.SafeFileNames(i))
                     TextBox1.AppendText(String.Join(vbCrLf, addTxt.ToArray) & vbCrLf)
 
                 Next
