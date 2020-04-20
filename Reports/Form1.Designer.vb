@@ -36,7 +36,7 @@ Partial Class Form1
         Me.ListBox1.FormattingEnabled = True
         Me.ListBox1.Location = New System.Drawing.Point(0, 24)
         Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(348, 199)
+        Me.ListBox1.Size = New System.Drawing.Size(265, 199)
         Me.ListBox1.TabIndex = 0
         '
         'ListBox2
@@ -44,7 +44,7 @@ Partial Class Form1
         Me.ListBox2.FormattingEnabled = True
         Me.ListBox2.Location = New System.Drawing.Point(0, 229)
         Me.ListBox2.Name = "ListBox2"
-        Me.ListBox2.Size = New System.Drawing.Size(348, 225)
+        Me.ListBox2.Size = New System.Drawing.Size(265, 225)
         Me.ListBox2.TabIndex = 1
         '
         'MenuStrip1
@@ -70,10 +70,11 @@ Partial Class Form1
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(354, 24)
+        Me.TextBox1.Dock = System.Windows.Forms.DockStyle.Right
+        Me.TextBox1.Location = New System.Drawing.Point(271, 24)
         Me.TextBox1.Multiline = True
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(629, 430)
+        Me.TextBox1.Size = New System.Drawing.Size(712, 437)
         Me.TextBox1.TabIndex = 3
         '
         'Form1
