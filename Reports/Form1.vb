@@ -20,8 +20,9 @@ Public Class Form1
                     Dim vPath As String = openfile.FileNames(i)
                     ListBox2.Items.Add(vPath)
 
-                    Dim allTxt() As String = IO.File.ReadAllLines(vPath, System.Text.Encoding.Default)
-                    Dim addTxt = From vLine1 In allTxt Where vLine1.StartsWith(vbTab & "OK") OrElse vLine1.StartsWith(vbTab & "ERROR")
+                    Dim allTxt() As String = IO.File.ReadAllLines(vPath, Encoding.Default)
+
+                    Dim addTxt = From vLine1 In allTxt Where (vLine1.StartsWith(vbTab & "OK") And vLine1 Like "*Закрытие*") OrElse vLine1.StartsWith(vbTab & "ERROR")
 
                     If addTxt.Count = 0 Then Continue For
                     TextBox1.AppendText(openfile.SafeFileNames(i))
