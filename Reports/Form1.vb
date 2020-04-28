@@ -2,7 +2,7 @@
 Imports System.IO
 Imports System.Text
 Public Class Form1
-    Private openfile As OpenFileDialog 'window to open files 
+    Private openfile As OpenFileDialog
     Private Sub FileOpenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FileOpenToolStripMenuItem.Click
 
         Try
@@ -22,7 +22,8 @@ Public Class Form1
 
                     Dim allTxt() As String = IO.File.ReadAllLines(vPath, Encoding.Default)
 
-                    Dim addTxt = From vLine1 In allTxt Where (vLine1.StartsWith(vbTab & "OK") And vLine1 Like "*Закрытие*") OrElse vLine1.StartsWith(vbTab & "ERROR")
+                    Dim addTxt = From vLine1 In allTxt Where (vLine1.StartsWith(vbTab & "OK") _
+                                                           And vLine1 Like "*Закрытие*") OrElse vLine1.StartsWith(vbTab & "ERROR")
 
                     If addTxt.Count = 0 Then Continue For
                     TextBox1.AppendText(openfile.SafeFileNames(i))
@@ -34,6 +35,10 @@ Public Class Form1
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         End Try
+
+    End Sub
+
+    Private Sub SaveToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SaveToolStripMenuItem.Click
 
     End Sub
 
