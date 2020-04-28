@@ -44,12 +44,15 @@ Public Class Form1
             'Указать путь создания файла
             Dim SFD As New FolderBrowserDialog
             If SFD.ShowDialog = Windows.Forms.DialogResult.OK Then
+                TextBox2.Text = SFD.SelectedPath
+
                 'Получить название папки из ListBox2
                 'Создать файл с именем папки
+                File.WriteAllText(TextBox2.Text & "\" & "ListBox2" & ".txt", "TextBox1.Text", System.Text.Encoding.Default)
                 'Записать в файл данные из TextBox1
             End If
         Else
-            Exit Sub 'ListBox1 и ListBox2 путые
+            Exit Sub 'ListBox1 и ListBox2 пустые
         End If
 
     End Sub
