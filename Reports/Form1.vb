@@ -39,6 +39,18 @@ Public Class Form1
     End Sub
 
     Private Sub SaveToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SaveToolStripMenuItem.Click
+        'Проверка на содержимое ListBox1 и ListBox2
+        If ListBox1.Items.Count > 0 And ListBox2.Items.Count > 0 Then
+            'Указать путь создания файла
+            Dim SFD As New FolderBrowserDialog
+            If SFD.ShowDialog = Windows.Forms.DialogResult.OK Then
+                'Получить название папки из ListBox2
+                'Создать файл с именем папки
+                'Записать в файл данные из TextBox1
+            End If
+        Else
+            Exit Sub 'ListBox1 и ListBox2 путые
+        End If
 
     End Sub
 
