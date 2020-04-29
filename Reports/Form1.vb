@@ -15,17 +15,19 @@ Public Class Form1
 
             If openfile.ShowDialog = Windows.Forms.DialogResult.OK Then
 
-                'Получить имя папки
-                'Dim dirInfo As New System.IO.DirectoryInfo()
-
                 For i As Integer = 0 To openfile.SafeFileNames.Count() - 1
                     ListBox1.Items.Add(openfile.SafeFileNames(i))
                     Dim vPath As String = openfile.FileNames(i)
+
+                    'TextBox3.Text = Path.GetDirectoryName(vPath)
+                    TextBox3.Text = IO.Directory.GetParent(vPath).Name
+
                     ListBox2.Items.Add(vPath)
 
                     Dim allTxt() As String = IO.File.ReadAllLines(vPath, Encoding.Default)
 
                     'Как сделать сортировку файла по ошибкам?
+
                     Dim addTxt = From vLine1 In allTxt Where (vLine1.StartsWith(vbTab & "OK") _
                                                            And vLine1 Like "*Закрытие*") OrElse vLine1.StartsWith(vbTab & "ERROR")
 
@@ -46,17 +48,9 @@ Public Class Form1
 
         If ListBox1.Items.Count > 0 And ListBox2.Items.Count > 0 Then
 
-            'Dim SFD As New FolderBrowserDialog
-            'If SFD.ShowDialog = Windows.Forms.DialogResult.OK Then
-            'TextBox2.Text = SFD.SelectedPath
-
-            'Application.StartupPath путь до exe
-            'Получить название папки из ListBox2
-            'Создать файл с именем папки
             TextBox2.Text = Application.StartupPath
 
-            File.WriteAllText(TextBox2.Text & "\Error report " & "ListBox2" & ".txt", TextBox1.Text, Encoding.Default)
-            'End If
+            File.WriteAllText(TextBox2.Text & "\Отчет " & TextBox3.Text & ".txt", TextBox1.Text, Encoding.Default)
         Else
             Exit Sub
         End If

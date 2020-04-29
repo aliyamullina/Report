@@ -27,9 +27,10 @@ Partial Class Form1
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileOpenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.SaveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -70,6 +71,12 @@ Partial Class Form1
         Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(46, 20)
         Me.ExitToolStripMenuItem.Text = "Clear"
         '
+        'SaveToolStripMenuItem
+        '
+        Me.SaveToolStripMenuItem.Name = "SaveToolStripMenuItem"
+        Me.SaveToolStripMenuItem.Size = New System.Drawing.Size(43, 20)
+        Me.SaveToolStripMenuItem.Text = "Save"
+        '
         'TextBox1
         '
         Me.TextBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
@@ -78,14 +85,8 @@ Partial Class Form1
         Me.TextBox1.Location = New System.Drawing.Point(271, 24)
         Me.TextBox1.Multiline = True
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(350, 430)
+        Me.TextBox1.Size = New System.Drawing.Size(350, 447)
         Me.TextBox1.TabIndex = 3
-        '
-        'SaveToolStripMenuItem
-        '
-        Me.SaveToolStripMenuItem.Name = "SaveToolStripMenuItem"
-        Me.SaveToolStripMenuItem.Size = New System.Drawing.Size(43, 20)
-        Me.SaveToolStripMenuItem.Text = "Save"
         '
         'TextBox2
         '
@@ -94,11 +95,19 @@ Partial Class Form1
         Me.TextBox2.Size = New System.Drawing.Size(265, 20)
         Me.TextBox2.TabIndex = 4
         '
+        'TextBox3
+        '
+        Me.TextBox3.Location = New System.Drawing.Point(0, 451)
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.Size = New System.Drawing.Size(265, 20)
+        Me.TextBox3.TabIndex = 5
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(621, 461)
+        Me.ClientSize = New System.Drawing.Size(621, 478)
+        Me.Controls.Add(Me.TextBox3)
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.ListBox2)
@@ -122,4 +131,5 @@ Partial Class Form1
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents SaveToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents TextBox3 As TextBox
 End Class
