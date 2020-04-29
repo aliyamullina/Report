@@ -14,7 +14,10 @@ Public Class Form1
             }
 
             If openfile.ShowDialog = Windows.Forms.DialogResult.OK Then
-                Dim vName = openfile.SafeFileNames.Count()
+
+                'Получить имя папки
+                'Dim dirInfo As New System.IO.DirectoryInfo()
+
                 For i As Integer = 0 To openfile.SafeFileNames.Count() - 1
                     ListBox1.Items.Add(openfile.SafeFileNames(i))
                     Dim vPath As String = openfile.FileNames(i)
@@ -22,6 +25,7 @@ Public Class Form1
 
                     Dim allTxt() As String = IO.File.ReadAllLines(vPath, Encoding.Default)
 
+                    'Как сделать сортировку файла по ошибкам?
                     Dim addTxt = From vLine1 In allTxt Where (vLine1.StartsWith(vbTab & "OK") _
                                                            And vLine1 Like "*Закрытие*") OrElse vLine1.StartsWith(vbTab & "ERROR")
 
@@ -39,20 +43,21 @@ Public Class Form1
     End Sub
 
     Private Sub SaveToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SaveToolStripMenuItem.Click
-        'Проверка на содержимое ListBox1 и ListBox2
+
         If ListBox1.Items.Count > 0 And ListBox2.Items.Count > 0 Then
-            'Указать путь создания файла
+
             Dim SFD As New FolderBrowserDialog
             If SFD.ShowDialog = Windows.Forms.DialogResult.OK Then
                 TextBox2.Text = SFD.SelectedPath
 
+                'Application.StartupPath путь до exe
                 'Получить название папки из ListBox2
                 'Создать файл с именем папки
-                File.WriteAllText(TextBox2.Text & "\" & "ListBox2" & ".txt", "TextBox1.Text", System.Text.Encoding.Default)
-                'Записать в файл данные из TextBox1
+
+                File.WriteAllText(TextBox2.Text & "\Error report " & "ListBox2" & ".txt", TextBox1.Text, Encoding.Default)
             End If
         Else
-            Exit Sub 'ListBox1 и ListBox2 пустые
+            Exit Sub
         End If
 
     End Sub
