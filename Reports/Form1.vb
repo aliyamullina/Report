@@ -46,16 +46,17 @@ Public Class Form1
 
         If ListBox1.Items.Count > 0 And ListBox2.Items.Count > 0 Then
 
-            Dim SFD As New FolderBrowserDialog
-            If SFD.ShowDialog = Windows.Forms.DialogResult.OK Then
-                TextBox2.Text = SFD.SelectedPath
+            'Dim SFD As New FolderBrowserDialog
+            'If SFD.ShowDialog = Windows.Forms.DialogResult.OK Then
+            'TextBox2.Text = SFD.SelectedPath
 
-                'Application.StartupPath путь до exe
-                'Получить название папки из ListBox2
-                'Создать файл с именем папки
+            'Application.StartupPath путь до exe
+            'Получить название папки из ListBox2
+            'Создать файл с именем папки
+            TextBox2.Text = Application.StartupPath
 
-                File.WriteAllText(TextBox2.Text & "\Error report " & "ListBox2" & ".txt", TextBox1.Text, Encoding.Default)
-            End If
+            File.WriteAllText(TextBox2.Text & "\Error report " & "ListBox2" & ".txt", TextBox1.Text, Encoding.Default)
+            'End If
         Else
             Exit Sub
         End If
