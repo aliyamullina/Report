@@ -1,6 +1,8 @@
 ﻿Imports System
 Imports System.IO
 Imports System.Text
+Imports Microsoft.Office.Interop
+
 Public Class Form1
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -24,6 +26,7 @@ Public Class Form1
             }
 
             If openfile.ShowDialog = Windows.Forms.DialogResult.OK Then
+                'как выбрать папку, а не файлы?
 
                 For i As Integer = 0 To openfile.SafeFileNames.Count() - 1
                     ListBox1.Items.Add(openfile.SafeFileNames(i))
