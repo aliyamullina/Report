@@ -2,7 +2,17 @@
 Imports System.IO
 Imports System.Text
 Public Class Form1
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ListView1.View = View.Details
+        ListView1.GridLines = True
+        ListView1.Columns.Add("Device", 200)
+        ListView1.Columns.Add("Errors", 300)
+        ListView1.FullRowSelect = True
+    End Sub
+
     Private openfile As OpenFileDialog
+
     Private Sub FileOpenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FileOpenToolStripMenuItem.Click
 
         Try
@@ -19,8 +29,7 @@ Public Class Form1
                     ListBox1.Items.Add(openfile.SafeFileNames(i))
                     Dim vPath As String = openfile.FileNames(i)
 
-                    'TextBox3.Text = Path.GetDirectoryName(vPath)
-                    TextBox3.Text = IO.Directory.GetParent(vPath).Name
+                    TextBox3.Text = Directory.GetParent(vPath).Name
 
                     ListBox2.Items.Add(vPath)
 
@@ -32,9 +41,13 @@ Public Class Form1
                                                            And vLine1 Like "*Закрытие*") OrElse vLine1.StartsWith(vbTab & "ERROR")
 
                     If addTxt.Count = 0 Then Continue For
-                    TextBox1.AppendText(openfile.SafeFileNames(i))
-                    TextBox1.AppendText(String.Join(vbCrLf, addTxt.ToArray) & vbCrLf)
+                    'TextBox1.AppendText(openfile.SafeFileNames(i))
+                    'TextBox1.AppendText(String.Join(vbCrLf, addTxt.ToArray) & vbCrLf)
 
+                    'ListView1.Items.Add(openfile.SafeFileNames(i))
+                    'ListView1.Items.Add(String.Join(vbCrLf, addTxt.ToArray) & vbCrLf)
+
+                    ListView1.Items.Add(New ListViewItem({openfile.SafeFileNames(i), String.Join(vbCrLf, addTxt.ToArray)}))
                 Next
             End If
 
@@ -62,5 +75,6 @@ Public Class Form1
         ListBox2.Items.Clear()
         TextBox1.Clear()
     End Sub
+
 
 End Class

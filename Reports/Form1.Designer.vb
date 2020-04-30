@@ -31,6 +31,7 @@ Partial Class Form1
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.ListView1 = New System.Windows.Forms.ListView()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -55,7 +56,7 @@ Partial Class Form1
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileOpenToolStripMenuItem, Me.ExitToolStripMenuItem, Me.SaveToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(621, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(687, 24)
         Me.MenuStrip1.TabIndex = 2
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -79,13 +80,12 @@ Partial Class Form1
         '
         'TextBox1
         '
-        Me.TextBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.TextBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox1.Location = New System.Drawing.Point(271, 24)
+        Me.TextBox1.Location = New System.Drawing.Point(300, 24)
         Me.TextBox1.Multiline = True
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(350, 447)
+        Me.TextBox1.Size = New System.Drawing.Size(387, 199)
         Me.TextBox1.TabIndex = 3
         '
         'TextBox2
@@ -102,11 +102,21 @@ Partial Class Form1
         Me.TextBox3.Size = New System.Drawing.Size(265, 20)
         Me.TextBox3.TabIndex = 5
         '
+        'ListView1
+        '
+        Me.ListView1.HideSelection = False
+        Me.ListView1.Location = New System.Drawing.Point(300, 229)
+        Me.ListView1.Name = "ListView1"
+        Me.ListView1.Size = New System.Drawing.Size(387, 242)
+        Me.ListView1.TabIndex = 6
+        Me.ListView1.UseCompatibleStateImageBehavior = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(621, 478)
+        Me.ClientSize = New System.Drawing.Size(687, 478)
+        Me.Controls.Add(Me.ListView1)
         Me.Controls.Add(Me.TextBox3)
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.TextBox1)
@@ -132,4 +142,5 @@ Partial Class Form1
     Friend WithEvents SaveToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents ListView1 As ListView
 End Class
