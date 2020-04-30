@@ -7,7 +7,7 @@ Public Class Form1
         ListView1.View = View.Details
         ListView1.GridLines = True
         ListView1.Columns.Add("Device", 200)
-        ListView1.Columns.Add("Errors", 300)
+        ListView1.Columns.Add("Errors", 400)
         ListView1.FullRowSelect = True
     End Sub
 
@@ -41,11 +41,6 @@ Public Class Form1
                                                            And vLine1 Like "*Закрытие*") OrElse vLine1.StartsWith(vbTab & "ERROR")
 
                     If addTxt.Count = 0 Then Continue For
-                    'TextBox1.AppendText(openfile.SafeFileNames(i))
-                    'TextBox1.AppendText(String.Join(vbCrLf, addTxt.ToArray) & vbCrLf)
-
-                    'ListView1.Items.Add(openfile.SafeFileNames(i))
-                    'ListView1.Items.Add(String.Join(vbCrLf, addTxt.ToArray) & vbCrLf)
 
                     ListView1.Items.Add(New ListViewItem({openfile.SafeFileNames(i), String.Join(vbCrLf, addTxt.ToArray)}))
                 Next
@@ -63,7 +58,10 @@ Public Class Form1
 
             TextBox2.Text = Application.StartupPath
 
-            File.WriteAllText(TextBox2.Text & "\Отчет " & TextBox3.Text & ".txt", TextBox1.Text, Encoding.Default)
+            'File.WriteAllText(TextBox2.Text & "\Отчет " & TextBox3.Text & ".txt", ListView1.Items, Encoding.Default)
+
+            'Как сохранить в excel?
+
         Else
             Exit Sub
         End If
@@ -73,7 +71,7 @@ Public Class Form1
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
         ListBox1.Items.Clear()
         ListBox2.Items.Clear()
-        TextBox1.Clear()
+        ListView1.Clear()
     End Sub
 
 
