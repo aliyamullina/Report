@@ -11,6 +11,7 @@ Public Class Form1
         ListView1.Columns.Add("Device", 200)
         ListView1.Columns.Add("Errors", 400)
         ListView1.FullRowSelect = True
+        MsExcel = CreateObject("Excel.Application")
     End Sub
 
     Private openfile As OpenFileDialog
@@ -81,6 +82,18 @@ Public Class Form1
         'MSExcel.Range("A1").Value = ListBox1.Items
         'MSExcel.Visible = True
 
+    Dim MsExcel As Excel.Application
+
+            With ListBox1.Items
+                .Add(txtName.Text)
+                .Add(txtEmail.Text)
+                .Add(txtMobile.Text)
+            End With
+            MsExcel.Workbooks.Add()
+            MsExcel.Range("A1").Value = txtName.Text
+            MsExcel.Range("B1").Value = txtEmail.Text
+            MsExcel.Range("C1").Value = txtMobile.Text
+            MsExcel.Visible = True
     End Sub
 
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
