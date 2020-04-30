@@ -26,7 +26,8 @@ Public Class Form1
             }
 
             If openfile.ShowDialog = Windows.Forms.DialogResult.OK Then
-                'как выбрать папку, а не файлы?
+
+                'Как выбрать папку, а не файлы?
 
                 For i As Integer = 0 To openfile.SafeFileNames.Count() - 1
                     ListBox1.Items.Add(openfile.SafeFileNames(i))
@@ -63,7 +64,7 @@ Public Class Form1
 
             'File.WriteAllText(TextBox2.Text & "\Отчет " & TextBox3.Text & ".txt", ListView1.Items, Encoding.Default)
 
-            CreateSaveXls()
+            exportToExcel()
 
         Else
             Exit Sub
@@ -71,8 +72,9 @@ Public Class Form1
 
     End Sub
 
-    Private Sub CreateSaveXls()
+    Private Sub exportToExcel()
         'Как сохранить в excel?
+
         'Dim MSExcel As Excel.Application
         'MSExcel = CreateObject("Excel.Application")
         'MSExcel.Workbooks.Add()
