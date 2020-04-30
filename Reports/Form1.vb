@@ -63,13 +63,7 @@ Public Class Form1
 
             'File.WriteAllText(TextBox2.Text & "\Отчет " & TextBox3.Text & ".txt", ListView1.Items, Encoding.Default)
 
-            'Как сохранить в excel?
             CreateSaveXls()
-            'Dim MSExcel As Excel.Application
-            'MSExcel = CreateObject("Excel.Application")
-            'MSExcel.Workbooks.Add()
-            'MSExcel.Range("A1").Value = ListBox1.Items
-            'MSExcel.Visible = True
 
         Else
             Exit Sub
@@ -78,23 +72,13 @@ Public Class Form1
     End Sub
 
     Private Sub CreateSaveXls()
-    Dim ii As Integer = 1
-    Dim Exc As Object = CreateObject("Excel.Application")
-    Exc.workbooks.add()
-    With Exc.activeworkbook.sheets(1)
-        For Each item As ListViewItem In ListView1.Items
-            .cells(ii, 1).value = item.Text
-            .cells(ii, 2).value = item.SubItems(1).Text
-            .cells(ii, 3).value = item.SubItems(2).Text
-            ii += 1
-        Next
-    End With
-    Exc.activeworkbook.saveas(IO.Path.Combine(Application.StartupPath, "file1.xls"))
-    Exc.workbooks.Close()
-    Exc.Quit()
-    Runtime.InteropServices.Marshal.ReleaseComObject(Exc)
-    Exc = Nothing
-End Sub
+        'Как сохранить в excel?
+        'Dim MSExcel As Excel.Application
+        'MSExcel = CreateObject("Excel.Application")
+        'MSExcel.Workbooks.Add()
+        'MSExcel.Range("A1").Value = ListBox1.Items
+        'MSExcel.Visible = True
+    End Sub
 
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
         ListBox1.Items.Clear()
