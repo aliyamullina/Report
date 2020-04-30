@@ -64,6 +64,11 @@ Public Class Form1
             'File.WriteAllText(TextBox2.Text & "\Отчет " & TextBox3.Text & ".txt", ListView1.Items, Encoding.Default)
 
             'Как сохранить в excel?
+            Dim MSExcel As Excel.Application
+            MSExcel = CreateObject("Excel.Application")
+            MSExcel.Workbooks.Add()
+            MSExcel.Range("A1").Value = ListBox1.Items
+            MSExcel.Visible = True
 
         Else
             Exit Sub
