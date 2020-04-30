@@ -11,7 +11,7 @@ Public Class Form1
         ListView1.Columns.Add("Device", 200)
         ListView1.Columns.Add("Errors", 400)
         ListView1.FullRowSelect = True
-        MsExcel = CreateObject("Excel.Application")
+
     End Sub
 
     Private openfile As OpenFileDialog
@@ -47,7 +47,10 @@ Public Class Form1
 
                     If addTxt.Count = 0 Then Continue For
 
-                    ListView1.Items.Add(New ListViewItem({openfile.SafeFileNames(i), String.Join(vbCrLf, addTxt.ToArray)}))
+                    Dim deviceName = openfile.SafeFileNames(i)
+                    Dim deviceReport = String.Join(vbCrLf, addTxt.ToArray)
+
+                    ListView1.Items.Add(New ListViewItem({deviceName, deviceReport}))
                 Next
             End If
 
@@ -76,24 +79,20 @@ Public Class Form1
     Private Sub exportToExcel()
         'Как сохранить в excel?
 
-        'Dim MSExcel As Excel.Application
-        'MSExcel = CreateObject("Excel.Application")
-        'MSExcel.Workbooks.Add()
-        'MSExcel.Range("A1").Value = ListBox1.Items
-        'MSExcel.Visible = True
+        Dim MSExcel As Excel.Application
+        MSExcel = CreateObject("Excel.Application")
 
-    Dim MsExcel As Excel.Application
+        With ListBox1.Items
+            .Add(deviceName.Text)
+            .Add(deviceReport.Text)
+        End With
 
-            With ListBox1.Items
-                .Add(txtName.Text)
-                .Add(txtEmail.Text)
-                .Add(txtMobile.Text)
-            End With
-            MsExcel.Workbooks.Add()
-            MsExcel.Range("A1").Value = txtName.Text
-            MsExcel.Range("B1").Value = txtEmail.Text
-            MsExcel.Range("C1").Value = txtMobile.Text
-            MsExcel.Visible = True
+        MSExcel.Workbooks.Add()
+
+        MSExcel.Range("A1").Value = deviceName.Text
+        MSExcel.Range("B1").Value = deviceReport.Text
+
+        MSExcel.Visible = True
     End Sub
 
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
