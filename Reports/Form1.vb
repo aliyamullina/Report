@@ -78,23 +78,8 @@ Public Class Form1
         'MSExcel.Workbooks.Add()
         'MSExcel.Range("A1").Value = ListBox1.Items
         'MSExcel.Visible = True
-        Dim oItem As Object
-Dim OffS As Integer
-Dim MsExcel As Excel.Application
-Dim Wb As Excel.Workbook
-    MsExcel = CreateObject("Excel.Application")
 
-    Set Wb = MsExcel.Workbooks.Open("Path_of_File")
-    OffS = 0
-    For Each oItem In ListBox1.Items
-        Wb.Sheets(1).Range("A1").Offset(OffS, 0).Value = oItem
-        OffS = OffS + 1
-    Next oItem
-
-    Wb.SaveAs
-    DoEvents
-    Wb.Close
-    MsExcel.Visible = True
+    End Sub
 
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
         ListBox1.Items.Clear()
