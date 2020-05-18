@@ -78,38 +78,29 @@ Public Class Form1
     End Sub
 
     Public Sub exportToExcel(Lw As ListView)
-        Try
-            'Как сохранить в excel?
+    Try
+        Dim objExcel As New Excel.Application
+        Dim bkWorkBook As Workbook
+        Dim shWorkSheet As Worksheet
+        Dim i As Integer
+        Dim j As Integer
 
-            Dim MSExcel As Excel.Application
-            MSExcel = CreateObject("Excel.Application")
-            Dim bkWorkBook As Object
-            Dim shWorkSheet As Object
-            Dim i As Integer
-            Dim j As Integer
-
-            For i = 0 To ListView1.Columns.Count - 1
-
+        objExcel = New Excel.Application
+        bkWorkBook = objExcel.Workbooks.Add
+        shWorkSheet = CType(bkWorkBook.ActiveSheet, Worksheet)
+        For i = 0 To Me.ListView1.Columns.Count - 1
+            shWorkSheet.Cells(1, i + 1) = Me.ListView1.Columns(i).Text
+        Next
+        For i = 0 To Me.ListView1.Items.Count - 1
+            For j = 0 To Me.ListView1.Items(i).SubItems.Count - 1
+                shWorkSheet.Cells(i + 2, j + 1) = Me.ListView1.Items(i).SubItems(j).Text
             Next
+        Next
 
-            For i = 0 To ListView1.Items.Count - 1
-
-            Next
-
-            With ListBox1.Items
-                ' .Add(deviceName.Text)
-                ' .Add(deviceReport.Text)
-            End With
-
-            MSExcel.Workbooks.Add()
-
-            ' MSExcel.Range("A1").Value = deviceName.Text
-            ' MSExcel.Range("B1").Value = deviceReport.Text
-
-            MSExcel.Visible = True
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
+        objExcel.Visible = True
+    Catch ex As Exception
+        MsgBox(ex.Message)
+    End Try
     End Sub
 
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
