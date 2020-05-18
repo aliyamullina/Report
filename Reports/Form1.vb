@@ -50,7 +50,7 @@ Public Class Form1
                     Dim deviceName = openfile.SafeFileNames(i)
                     Dim deviceReport = String.Join(vbCrLf, addTxt.ToArray)
 
-                    ListView1.Items.Add(New ListViewItem({deviceName, deviceReport}))
+                    Dim listViewItem = ListView1.Items.Add(New ListViewItem({deviceName, deviceReport}))
                 Next
             End If
 
@@ -83,14 +83,14 @@ Public Class Form1
         MSExcel = CreateObject("Excel.Application")
 
         With ListBox1.Items
-            .Add(deviceName.Text)
-            .Add(deviceReport.Text)
+            ' .Add(deviceName.Text)
+            '.Add(deviceReport.Text)
         End With
 
         MSExcel.Workbooks.Add()
 
-        MSExcel.Range("A1").Value = deviceName.Text
-        MSExcel.Range("B1").Value = deviceReport.Text
+        ' MSExcel.Range("A1").Value = deviceName.Text
+        'MSExcel.Range("B1").Value = deviceReport.Text
 
         MSExcel.Visible = True
     End Sub
