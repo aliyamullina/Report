@@ -77,30 +77,30 @@ Public Class Form1
 
     End Sub
 
-    Public Sub exportToExcel(Lw As ListView)
-    Try
-        Dim objExcel As New Excel.Application
-        Dim bkWorkBook As Workbook
-        Dim shWorkSheet As Worksheet
-        Dim i As Integer
-        Dim j As Integer
+    Public Sub exportToExcel()
+        Try
+            Dim objExcel As New Excel.Application
+            Dim bkWorkBook As Excel.Workbook
+            Dim shWorkSheet As Excel.Worksheet
+            Dim i As Integer
+            Dim j As Integer
 
-        objExcel = New Excel.Application
-        bkWorkBook = objExcel.Workbooks.Add
-        shWorkSheet = CType(bkWorkBook.ActiveSheet, Worksheet)
-        For i = 0 To Me.ListView1.Columns.Count - 1
-            shWorkSheet.Cells(1, i + 1) = Me.ListView1.Columns(i).Text
-        Next
-        For i = 0 To Me.ListView1.Items.Count - 1
-            For j = 0 To Me.ListView1.Items(i).SubItems.Count - 1
-                shWorkSheet.Cells(i + 2, j + 1) = Me.ListView1.Items(i).SubItems(j).Text
+            objExcel = New Excel.Application
+            bkWorkBook = objExcel.Workbooks.Add
+            shWorkSheet = CType(bkWorkBook.ActiveSheet, Excel.Worksheet)
+            For i = 0 To Me.ListView1.Columns.Count - 1
+                shWorkSheet.Cells(1, i + 1) = Me.ListView1.Columns(i).Text
             Next
-        Next
+            For i = 0 To Me.ListView1.Items.Count - 1
+                For j = 0 To Me.ListView1.Items(i).SubItems.Count - 1
+                    shWorkSheet.Cells(i + 2, j + 1) = Me.ListView1.Items(i).SubItems(j).Text
+                Next
+            Next
 
-        objExcel.Visible = True
-    Catch ex As Exception
-        MsgBox(ex.Message)
-    End Try
+            objExcel.Visible = True
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
