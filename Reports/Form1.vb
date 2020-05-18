@@ -50,7 +50,8 @@ Public Class Form1
                     Dim deviceName = openfile.SafeFileNames(i)
                     Dim deviceReport = String.Join(vbCrLf, addTxt.ToArray)
 
-                    Dim listViewItem = ListView1.Items.Add(New ListViewItem({deviceName, deviceReport}))
+                    ListView1.Items.Add(New ListViewItem({deviceName, deviceReport}))
+
                 Next
             End If
 
@@ -76,23 +77,39 @@ Public Class Form1
 
     End Sub
 
-    Private Sub exportToExcel()
-        'Как сохранить в excel?
+    Public Sub exportToExcel(Lw As ListView)
+        Try
+            'Как сохранить в excel?
 
-        Dim MSExcel As Excel.Application
-        MSExcel = CreateObject("Excel.Application")
+            Dim MSExcel As Excel.Application
+            MSExcel = CreateObject("Excel.Application")
+            Dim bkWorkBook As Object
+            Dim shWorkSheet As Object
+            Dim i As Integer
+            Dim j As Integer
 
-        With ListBox1.Items
-            ' .Add(deviceName.Text)
-            '.Add(deviceReport.Text)
-        End With
+            For i = 0 To ListView1.Columns.Count - 1
 
-        MSExcel.Workbooks.Add()
+            Next
 
-        ' MSExcel.Range("A1").Value = deviceName.Text
-        'MSExcel.Range("B1").Value = deviceReport.Text
+            For i = 0 To ListView1.Items.Count - 1
 
-        MSExcel.Visible = True
+            Next
+
+            With ListBox1.Items
+                ' .Add(deviceName.Text)
+                ' .Add(deviceReport.Text)
+            End With
+
+            MSExcel.Workbooks.Add()
+
+            ' MSExcel.Range("A1").Value = deviceName.Text
+            ' MSExcel.Range("B1").Value = deviceReport.Text
+
+            MSExcel.Visible = True
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
@@ -100,6 +117,4 @@ Public Class Form1
         ListBox2.Items.Clear()
         ListView1.Items.Clear()
     End Sub
-
-
 End Class
