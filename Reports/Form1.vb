@@ -64,6 +64,11 @@ Public Class Form1
         End Try
 
     End Sub
+    Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
+        ListBox1.Items.Clear()
+        ListBox2.Items.Clear()
+        ListView1.Items.Clear()
+    End Sub
 
     Public Sub findFolderName()
         Try
@@ -112,9 +117,4 @@ Public Class Form1
         End Try
     End Sub
 
-    Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
-        ListBox1.Items.Clear()
-        ListBox2.Items.Clear()
-        ListView1.Items.Clear()
-    End Sub
 End Class
