@@ -53,6 +53,10 @@ Public Class Form1
                     ListView1.Items.Add(New ListViewItem({deviceName, deviceReport}))
 
                 Next
+
+                findFolderName()
+                exportToExcel()
+
             End If
 
         Catch ex As Exception
@@ -61,17 +65,17 @@ Public Class Form1
 
     End Sub
 
-    Private Sub SaveToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SaveToolStripMenuItem.Click
+    Public Sub findFolderName()
+        Try
+            If ListBox1.Items.Count > 0 And ListBox2.Items.Count > 0 Then
 
-        If ListBox1.Items.Count > 0 And ListBox2.Items.Count > 0 Then
-
-            TextBox2.Text = Application.StartupPath
-
-            exportToExcel()
-
-        Else
-            Exit Sub
-        End If
+                TextBox2.Text = Application.StartupPath
+            Else
+                Exit Sub
+            End If
+        Catch ex As Exception
+            MsgBox("Folder name error " & ex.Message)
+        End Try
 
     End Sub
 
