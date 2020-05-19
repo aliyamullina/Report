@@ -67,8 +67,6 @@ Public Class Form1
 
             TextBox2.Text = Application.StartupPath
 
-            'File.WriteAllText(TextBox2.Text & "\Отчет " & TextBox3.Text & ".txt", ListView1.Items, Encoding.Default)
-
             exportToExcel()
 
         Else
@@ -99,11 +97,14 @@ Public Class Form1
                 Next
             Next
 
-            objExcel.Visible = True
             objExcel.Columns.AutoFit()
 
+            bkWorkBook.SaveAs(TextBox2.Text & "\Отчет " & TextBox3.Text)
+            bkWorkBook.Close()
+            objExcel.Quit()
+
         Catch ex As Exception
-            MsgBox(ex.Message)
+            MsgBox("Export excel error " & ex.Message)
         End Try
     End Sub
 
