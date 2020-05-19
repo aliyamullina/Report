@@ -88,9 +88,11 @@ Public Class Form1
             objExcel = New Excel.Application
             bkWorkBook = objExcel.Workbooks.Add
             shWorkSheet = CType(bkWorkBook.ActiveSheet, Excel.Worksheet)
+
             For i = 0 To Me.ListView1.Columns.Count - 1
                 shWorkSheet.Cells(1, i + 1) = Me.ListView1.Columns(i).Text
             Next
+
             For i = 0 To Me.ListView1.Items.Count - 1
                 For j = 0 To Me.ListView1.Items(i).SubItems.Count - 1
                     shWorkSheet.Cells(i + 2, j + 1) = Me.ListView1.Items(i).SubItems(j).Text
@@ -98,6 +100,8 @@ Public Class Form1
             Next
 
             objExcel.Visible = True
+            objExcel.Columns.AutoFit()
+
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
