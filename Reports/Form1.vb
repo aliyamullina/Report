@@ -7,6 +7,7 @@ Imports Microsoft.Office.Interop.Excel
 
 Public Class Form1
 
+    'BackgroundWorker Класс???
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ListView1.View = View.Details
         ListView1.GridLines = True
@@ -52,9 +53,9 @@ Public Class Form1
                     Dim deviceReport = String.Join(vbCrLf, addTxt.ToArray)
 
                     ListView1.Items.Add(New ListViewItem({deviceName, deviceReport}))
-
                 Next
 
+                sortColumnError()
                 findFolderName()
                 exportToExcel()
 
@@ -71,6 +72,21 @@ Public Class Form1
         ListView1.Items.Clear()
     End Sub
 
+    ''' <summary>
+    ''' Как сортировать по значению?
+    ''' </summary>
+    Public Sub sortColumnError()
+        Try
+            ListView1.Sorting = SortOrder.Ascending
+            ListView1.Sort()
+        Catch ex As Exception
+            MsgBox("Dont sorting " & ex.Message)
+        End Try
+    End Sub
+
+    ''' <summary>
+    ''' Берет название папки выбранных файлов
+    ''' </summary>
     Public Sub findFolderName()
         Try
             If ListBox1.Items.Count > 0 And ListBox2.Items.Count > 0 Then
@@ -82,10 +98,11 @@ Public Class Form1
         Catch ex As Exception
             MsgBox("Folder name error " & ex.Message)
         End Try
-
     End Sub
 
-
+    ''' <summary>
+    ''' Выгрузка из таблицы в файл
+    ''' </summary>
     Public Sub exportToExcel()
         Try
             Dim objExcel As New Excel.Application
