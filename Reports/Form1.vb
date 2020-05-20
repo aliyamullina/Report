@@ -40,10 +40,9 @@ Public Class Form1
 
                     Dim allTxt() As String = IO.File.ReadAllLines(vPath, Encoding.Default)
 
-                    'Как сделать сортировку файла по ошибкам?
-
                     Dim addTxt = From vLine1 In allTxt Where (vLine1.StartsWith(vbTab & "OK") _
-                                                           And vLine1 Like "*Закрытие*") OrElse vLine1.StartsWith(vbTab & "ERROR")
+                                                           And vLine1 Like "*Закрытие*") _
+                                                           OrElse vLine1.StartsWith(vbTab & "ERROR")
 
                     If addTxt.Count = 0 Then Continue For
 
@@ -107,6 +106,14 @@ Public Class Form1
             Next
 
             objExcel.Columns.AutoFit()
+
+            'Как сделать сортировку файла по столбцу B?
+            ' Ok, порт, нет ответа
+            'objExcel.Range("")
+
+            With shWorkSheet
+                objExcel.Range(.Cells(2, "B"), .Cells(.Rows.Count, "A").End())
+            End With
 
             bkWorkBook.SaveAs(TextBox2.Text & "\Отчет " & TextBox3.Text)
             bkWorkBook.Close()
