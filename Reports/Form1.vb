@@ -1,5 +1,6 @@
 ﻿Imports System
 Imports System.IO
+Imports System.Windows.Forms
 Imports System.Text
 Imports Microsoft.Office.Interop
 Imports Microsoft.Office.Interop.Excel
@@ -27,7 +28,7 @@ Public Class Form1
                 .RestoreDirectory = True
             }
 
-            If openfile.ShowDialog = Windows.Forms.DialogResult.OK Then
+            If openfile.ShowDialog = System.Windows.Forms.DialogResult.OK Then
 
                 'Как выбрать папку, а не файлы?
 
@@ -74,7 +75,7 @@ Public Class Form1
         Try
             If ListBox1.Items.Count > 0 And ListBox2.Items.Count > 0 Then
 
-                TextBox2.Text = Application.StartupPath
+                TextBox2.Text = System.Windows.Forms.Application.StartupPath
             Else
                 Exit Sub
             End If
