@@ -85,6 +85,7 @@ Public Class Form1
 
     End Sub
 
+
     Public Sub exportToExcel()
         Try
             Dim objExcel As New Excel.Application
@@ -110,24 +111,16 @@ Public Class Form1
             objExcel.Columns.AutoFit()
 
             'Как сделать сортировку файла по столбцу B?
-            ' Ok, порт, нет ответа
-            'objExcel.Range("")
 
             With shWorkSheet
-                'определяем диапазон со 2-й строки до последней заполненной строки в стобце А
-                'Dim xlApp As New Excel.Application 'приложение Excel
-                'Dim xlWB As Excel.Workbook 'книга
-                'Dim xlSht As Excel.Worksheet 'лист
-                Dim Rng As Excel.Range 'диапазон ячеек, который будем сотрировать
+                Dim Rng As Excel.Range
+                Rng = .Range(.Cells(2, "B"), .Cells(.Rows.Count, "B").End(XlDirection.xlUp))
 
-                'xlWB = xlApp.Workbooks.Open("G:\Excel file.xlsx") 'путь к нашему Excel файлу
-                'xlSht = xlWB.Worksheets("Лист1") 'имя листа с данными
-
-
-                Rng = .Range(.Cells(2, "A"), .Cells(.Rows.Count, "A").End(XlDirection.xlUp))
-                'сама сортировка
                 .Sort.SortFields.Clear()
-                .Sort.SortFields.Add(Key:=Rng, SortOn:=XlSortOn.xlSortOnValues, Order:=XlSortOrder.xlDescending, DataOption:=XlSortDataOption.xlSortNormal) ' XlSortOrder.xlAscending - по возрастанию, XlSortOrder.xlDescending -  по убыванию
+                .Sort.SortFields.Add(Key:=Rng,
+                                     SortOn:=XlSortOn.xlSortOnValues,
+                                     Order:=XlSortOrder.xlDescending,
+                                     DataOption:=XlSortDataOption.xlSortNormal)
                 With .Sort
                     .SetRange(Rng)
                     .Header = XlYesNoGuess.xlNo 'xlGuess
