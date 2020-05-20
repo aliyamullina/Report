@@ -112,24 +112,21 @@ Public Class Form1
             'objExcel.Range("")
 
             With shWorkSheet
-                objExcel.Range(.Cells(2, "B"), .Cells(.Rows.Count, "A").End())
+                'определяем диапазон со 2-й строки до последней заполненной строки в стобце А
+                Dim Rng As Excel.Range
+                Rng = .Range(.Cells(2, "A"), .Cells(.Rows.Count, "A").End(XlDirection.xlUp))
+                'сама сортировка
+                .Sort.SortFields.Clear()
+                .Sort.SortFields.Add(Key:=Rng, SortOn:=XlSortOn.xlSortOnValues, Order:=XlSortOrder.xlAscending, DataOption:=XlSortDataOption.xlSortNormal) ' XlSortOrder.xlAscending - по возрастанию, XlSortOrder.xlDescending -  по убыванию
+                With .Sort
+                    .SetRange(Rng)
+                    .Header = XlYesNoGuess.xlNo 'xlGuess
+                    .MatchCase = False
+                    .Orientation = Constants.xlTopToBottom 'XlSortOrientation.xlSortRows 
+                    .SortMethod = XlSortMethod.xlPinYin
+                    .Apply()
+                End With
             End With
-            
-            With xlSht
-            'определяем диапазон со 2-й строки до последней заполненной строки в стобце А
-            Rng = .Range(.Cells(2, "A"), .Cells(.Rows.Count, "A").End(XlDirection.xlUp))
-            'сама сортировка
-            .Sort.SortFields.Clear()
-            .Sort.SortFields.Add(Key:=Rng, SortOn:=XlSortOn.xlSortOnValues, Order:=XlSortOrder.xlAscending, DataOption:=XlSortDataOption.xlSortNormal) ' XlSortOrder.xlAscending - по возрастанию, XlSortOrder.xlDescending -  по убыванию
-            With .Sort
-                .SetRange(Rng)
-                .Header = XlYesNoGuess.xlNo 'xlGuess
-                .MatchCase = False
-                .Orientation = Constants.xlTopToBottom 'XlSortOrientation.xlSortRows 
-                .SortMethod = XlSortMethod.xlPinYin
-                .Apply()
-            End With
-        End With
 
             bkWorkBook.SaveAs(TextBox2.Text & "\Отчет " & TextBox3.Text)
             bkWorkBook.Close()
