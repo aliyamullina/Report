@@ -110,28 +110,7 @@ Public Class Form1
 
             objExcel.Columns.AutoFit()
 
-            'Как сделать сортировку файла по столбцу B?
-
-            With shWorkSheet
-                Dim Rng As Excel.Range
-                Rng = .Range(.Cells(2, "B"), .Cells(.Rows.Count, "B").End(XlDirection.xlUp))
-
-                .Sort.SortFields.Clear()
-                .Sort.SortFields.Add(Key:=Rng,
-                                     SortOn:=XlSortOn.xlSortOnValues,
-                                     Order:=XlSortOrder.xlDescending,
-                                     DataOption:=XlSortDataOption.xlSortNormal)
-                With .Sort
-                    .SetRange(Rng)
-                    .Header = XlYesNoGuess.xlNo 'xlGuess
-                    .MatchCase = False
-                    .Orientation = Constants.xlTopToBottom 'XlSortOrientation.xlSortRows 
-                    .SortMethod = XlSortMethod.xlPinYin
-                    .Apply()
-                End With
-            End With
-
-            bkWorkBook.SaveAs(TextBox2.Text & "\Отчет " & TextBox3.Text)
+            bkWorkBook.SaveAs(TextBox2.Text & "\Отчет " & Format(Now, "yyyyMMdd") & " " & TextBox3.Text)
             bkWorkBook.Close()
             objExcel.Quit()
 
