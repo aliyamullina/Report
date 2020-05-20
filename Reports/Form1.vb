@@ -113,7 +113,15 @@ Public Class Form1
 
             With shWorkSheet
                 'определяем диапазон со 2-й строки до последней заполненной строки в стобце А
-                Dim Rng As Excel.Range
+                        Dim xlApp As New Excel.Application 'приложение Excel
+        Dim xlWB As Excel.Workbook 'книга
+        Dim xlSht As Excel.Worksheet 'лист
+        Dim Rng As Excel.Range 'диапазон ячеек, который будем сотрировать
+ 
+        xlWB = xlApp.Workbooks.Open("G:\Excel file.xlsx") 'путь к нашему Excel файлу
+        xlSht = xlWB.Worksheets("Лист1") 'имя листа с данными
+
+              
                 Rng = .Range(.Cells(2, "A"), .Cells(.Rows.Count, "A").End(XlDirection.xlUp))
                 'сама сортировка
                 .Sort.SortFields.Clear()
