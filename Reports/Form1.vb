@@ -32,6 +32,9 @@ Public Class Form1
             If openfile.ShowDialog = System.Windows.Forms.DialogResult.OK Then
 
                 'Как выбрать папку, а не файлы?
+                'Скрыть Таблицу
+                'Вывести названия папок 
+                'Вывести системные сообщения
 
                 For i As Integer = 0 To openfile.SafeFileNames.Count() - 1
                     ListBox1.Items.Add(openfile.SafeFileNames(i))
@@ -77,8 +80,12 @@ Public Class Form1
     ''' </summary>
     Public Sub sortColumnError()
         Try
-            ListView1.Sorting = SortOrder.Ascending
-            ListView1.Sort()
+            'ListView1.Sorting = SortOrder.Ascending
+            'ListView1.Sort()
+
+            'Cчитать с listView в массив двумерный и
+            'с массива считывать в listView по параметрам OK, порт и нет ответа
+
         Catch ex As Exception
             MsgBox("Dont sorting " & ex.Message)
         End Try
