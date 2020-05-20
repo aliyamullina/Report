@@ -2,6 +2,7 @@
 Imports System.IO
 Imports System.Text
 Imports Microsoft.Office.Interop
+Imports Microsoft.Office.Interop.Excel
 
 Public Class Form1
 
@@ -113,19 +114,19 @@ Public Class Form1
 
             With shWorkSheet
                 'определяем диапазон со 2-й строки до последней заполненной строки в стобце А
-                        Dim xlApp As New Excel.Application 'приложение Excel
-        Dim xlWB As Excel.Workbook 'книга
-        Dim xlSht As Excel.Worksheet 'лист
-        Dim Rng As Excel.Range 'диапазон ячеек, который будем сотрировать
- 
-        xlWB = xlApp.Workbooks.Open("G:\Excel file.xlsx") 'путь к нашему Excel файлу
-        xlSht = xlWB.Worksheets("Лист1") 'имя листа с данными
+                'Dim xlApp As New Excel.Application 'приложение Excel
+                'Dim xlWB As Excel.Workbook 'книга
+                'Dim xlSht As Excel.Worksheet 'лист
+                Dim Rng As Excel.Range 'диапазон ячеек, который будем сотрировать
 
-              
+                'xlWB = xlApp.Workbooks.Open("G:\Excel file.xlsx") 'путь к нашему Excel файлу
+                'xlSht = xlWB.Worksheets("Лист1") 'имя листа с данными
+
+
                 Rng = .Range(.Cells(2, "A"), .Cells(.Rows.Count, "A").End(XlDirection.xlUp))
                 'сама сортировка
                 .Sort.SortFields.Clear()
-                .Sort.SortFields.Add(Key:=Rng, SortOn:=XlSortOn.xlSortOnValues, Order:=XlSortOrder.xlAscending, DataOption:=XlSortDataOption.xlSortNormal) ' XlSortOrder.xlAscending - по возрастанию, XlSortOrder.xlDescending -  по убыванию
+                .Sort.SortFields.Add(Key:=Rng, SortOn:=XlSortOn.xlSortOnValues, Order:=XlSortOrder.xlDescending, DataOption:=XlSortDataOption.xlSortNormal) ' XlSortOrder.xlAscending - по возрастанию, XlSortOrder.xlDescending -  по убыванию
                 With .Sort
                     .SetRange(Rng)
                     .Header = XlYesNoGuess.xlNo 'xlGuess
