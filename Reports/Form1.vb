@@ -79,7 +79,7 @@ Public Class Form1
 
 
     ''' <summary>
-    ''' Сортировка с помощью массива
+    ''' ERROR - сортировка с помощью массива
     ''' arrayPush - с listView в массив;
     ''' arrayPull - обратно в listView.
     ''' </summary>
@@ -91,11 +91,14 @@ Public Class Form1
             'Cчитать с listView в массив двумерный и
             'с массива считывать в listView по параметрам OK, порт и нет ответа
 
-            Dim deviceName As Integer, deviceReport As Integer
+            Dim i As Integer, j As Integer
+            Dim arrayPush(i, j) As String  'массив
 
-            Dim arrayPush(deviceName, deviceReport)  'массив
-
-
+            For i = 0 To Me.ListView1.Items.Count - 1
+                For j = 0 To Me.ListView1.Items(i).SubItems.Count - 1
+                    arrayPush(i, j) = i & j
+                Next
+            Next
 
         Catch ex As Exception
             MsgBox("Dont sorting " & ex.Message)

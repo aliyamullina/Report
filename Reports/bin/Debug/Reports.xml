@@ -22,24 +22,43 @@ Reports
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="M:Reports.Form1.Form1_Load(System.Object,System.EventArgs)">
+ <summary>
+ ОК - предварительная загрузка окна с таблицей
+ </summary>
+</member>
+<member name="M:Reports.Form1.FileOpenToolStripMenuItem_Click(System.Object,System.EventArgs)">
+ <summary>
+ ОК - таблица с данными и файл в excel
+ 
+ Задачи:
+ Как выбрать папку, а не файлы?
+ Скрыть Таблицу     
+ Вывести названия папок 
+ Вывести системные сообщения
+ Открывать папку с файлом в конце
+ </summary>
+</member>
 <member name="M:Reports.Form1.sortColumnError">
  <summary>
- Как сортировать по значению?
+ Сортировка с помощью массива
+ arrayPush - с listView в массив;
+ arrayPull - обратно в listView.
  </summary>
 </member>
 <member name="M:Reports.Form1.findFolderName">
  <summary>
- Берет название папки выбранных файлов
+ ОК - берет название папки выбранных файлов
  </summary>
 </member>
 <member name="M:Reports.Form1.exportToExcel">
  <summary>
- Выгрузка из таблицы в файл
+ ОК - выгрузка из таблицы в файл
  </summary>
 </member>
 <member name="M:Reports.Form1.ExitToolStripMenuItem_Click(System.Object,System.EventArgs)">
  <summary>
- Очистка по кнопке для повторного исрользования
+ ОК - очистка по кнопке для повторного исрользования
  </summary>
 </member>
 </members>
