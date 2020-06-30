@@ -41,7 +41,7 @@ Partial Class Form1
         Me.ListBox1.FormattingEnabled = True
         Me.ListBox1.Location = New System.Drawing.Point(442, 153)
         Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(245, 108)
+        Me.ListBox1.Size = New System.Drawing.Size(236, 69)
         Me.ListBox1.TabIndex = 0
         '
         'ListBox2
@@ -52,7 +52,7 @@ Partial Class Form1
         Me.ListBox2.FormattingEnabled = True
         Me.ListBox2.Location = New System.Drawing.Point(442, 39)
         Me.ListBox2.Name = "ListBox2"
-        Me.ListBox2.Size = New System.Drawing.Size(245, 108)
+        Me.ListBox2.Size = New System.Drawing.Size(236, 69)
         Me.ListBox2.TabIndex = 1
         '
         'MenuStrip1
@@ -60,38 +60,38 @@ Partial Class Form1
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileOpenToolStripMenuItem, Me.ExitToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(687, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(678, 24)
         Me.MenuStrip1.TabIndex = 2
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'FileOpenToolStripMenuItem
         '
         Me.FileOpenToolStripMenuItem.Name = "FileOpenToolStripMenuItem"
-        Me.FileOpenToolStripMenuItem.Size = New System.Drawing.Size(67, 20)
+        Me.FileOpenToolStripMenuItem.Size = New System.Drawing.Size(69, 20)
         Me.FileOpenToolStripMenuItem.Text = "File open"
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(46, 20)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(47, 20)
         Me.ExitToolStripMenuItem.Text = "Clear"
         '
         'TextBox2
         '
         Me.TextBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox2.Location = New System.Drawing.Point(442, 267)
+        Me.TextBox2.Location = New System.Drawing.Point(442, 231)
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(245, 20)
+        Me.TextBox2.Size = New System.Drawing.Size(236, 22)
         Me.TextBox2.TabIndex = 4
         '
         'TextBox3
         '
         Me.TextBox3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox3.Location = New System.Drawing.Point(442, 293)
+        Me.TextBox3.Location = New System.Drawing.Point(442, 257)
         Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(245, 20)
+        Me.TextBox3.Size = New System.Drawing.Size(236, 22)
         Me.TextBox3.TabIndex = 5
         '
         'ListView1
@@ -103,7 +103,7 @@ Partial Class Form1
         Me.ListView1.HideSelection = False
         Me.ListView1.Location = New System.Drawing.Point(0, 39)
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(436, 380)
+        Me.ListView1.Size = New System.Drawing.Size(427, 344)
         Me.ListView1.TabIndex = 6
         Me.ListView1.UseCompatibleStateImageBehavior = False
         '
@@ -111,7 +111,7 @@ Partial Class Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(687, 478)
+        Me.ClientSize = New System.Drawing.Size(678, 442)
         Me.Controls.Add(Me.ListView1)
         Me.Controls.Add(Me.TextBox3)
         Me.Controls.Add(Me.TextBox2)

@@ -41,7 +41,7 @@ Reports
 </member>
 <member name="M:Reports.Form1.sortColumnError">
  <summary>
- Сортировка с помощью массива
+ ERROR - сортировка с помощью массива
  arrayPush - с listView в массив;
  arrayPull - обратно в listView.
  </summary>

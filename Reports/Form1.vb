@@ -77,34 +77,6 @@ Public Class Form1
 
     End Sub
 
-
-    ''' <summary>
-    ''' ERROR - сортировка с помощью массива
-    ''' arrayPush - с listView в массив;
-    ''' arrayPull - обратно в listView.
-    ''' </summary>
-    Public Sub sortColumnError()
-        Try
-            'ListView1.Sorting = SortOrder.Ascending
-            'ListView1.Sort()
-
-            'Cчитать с listView в массив двумерный и
-            'с массива считывать в listView по параметрам OK, порт и нет ответа
-
-            Dim i As Integer, j As Integer
-            Dim arrayPush(i, j) As String  'массив
-
-            For i = 0 To Me.ListView1.Items.Count - 1
-                For j = 0 To Me.ListView1.Items(i).SubItems.Count - 1
-                    arrayPush(i, j) = i & j
-                Next
-            Next
-
-        Catch ex As Exception
-            MsgBox("Dont sorting " & ex.Message)
-        End Try
-    End Sub
-
     ''' <summary>
     ''' ОК - берет название папки выбранных файлов
     ''' </summary>
@@ -165,4 +137,14 @@ Public Class Form1
         ListView1.Items.Clear()
     End Sub
 
+    ''' <summary>
+    ''' ERROR - сортировка
+    ''' </summary>
+    Public Sub sortColumnError()
+        Try
+
+        Catch ex As Exception
+            MsgBox("Dont sorting " & ex.Message)
+        End Try
+    End Sub
 End Class
