@@ -69,11 +69,7 @@ Public Class Form1
         End Try
 
     End Sub
-    Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
-        ListBox1.Items.Clear()
-        ListBox2.Items.Clear()
-        ListView1.Items.Clear()
-    End Sub
+
 
     ''' <summary>
     ''' Как сортировать по значению?
@@ -85,6 +81,8 @@ Public Class Form1
 
             'Cчитать с listView в массив двумерный и
             'с массива считывать в listView по параметрам OK, порт и нет ответа
+
+
 
         Catch ex As Exception
             MsgBox("Dont sorting " & ex.Message)
@@ -141,6 +139,15 @@ Public Class Form1
         Catch ex As Exception
             MsgBox("Export excel error " & ex.Message)
         End Try
+    End Sub
+
+    ''' <summary>
+    ''' Очистка по кнопке для повторного исрользования
+    ''' </summary>
+    Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
+        ListBox1.Items.Clear()
+        ListBox2.Items.Clear()
+        ListView1.Items.Clear()
     End Sub
 
 End Class

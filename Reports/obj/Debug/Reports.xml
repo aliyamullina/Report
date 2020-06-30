@@ -22,5 +22,25 @@ Reports
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="M:Reports.Form1.sortColumnError">
+ <summary>
+ Как сортировать по значению?
+ </summary>
+</member>
+<member name="M:Reports.Form1.findFolderName">
+ <summary>
+ Берет название папки выбранных файлов
+ </summary>
+</member>
+<member name="M:Reports.Form1.exportToExcel">
+ <summary>
+ Выгрузка из таблицы в файл
+ </summary>
+</member>
+<member name="M:Reports.Form1.ExitToolStripMenuItem_Click(System.Object,System.EventArgs)">
+ <summary>
+ Очистка по кнопке для повторного исрользования
+ </summary>
+</member>
 </members>
 </doc>
