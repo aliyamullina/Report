@@ -7,18 +7,30 @@ Imports Microsoft.Office.Interop.Excel
 
 Public Class Form1
 
-    'BackgroundWorker Класс???
+
+    ''' <summary>
+    ''' ОК - предварительная загрузка окна с таблицей
+    ''' </summary>
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ListView1.View = View.Details
         ListView1.GridLines = True
         ListView1.Columns.Add("Device", 200)
         ListView1.Columns.Add("Errors", 400)
         ListView1.FullRowSelect = True
-
     End Sub
 
     Private openfile As OpenFileDialog
 
+    ''' <summary>
+    ''' ОК - таблица с данными и файл в excel
+    ''' 
+    ''' Задачи:
+    ''' Как выбрать папку, а не файлы?
+    ''' Скрыть Таблицу     
+    ''' Вывести названия папок 
+    ''' Вывести системные сообщения
+    ''' Открывать папку с файлом в конце
+    ''' </summary>
     Private Sub FileOpenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FileOpenToolStripMenuItem.Click
 
         Try
@@ -30,11 +42,6 @@ Public Class Form1
             }
 
             If openfile.ShowDialog = System.Windows.Forms.DialogResult.OK Then
-
-                'Как выбрать папку, а не файлы?
-                'Скрыть Таблицу
-                'Вывести названия папок 
-                'Вывести системные сообщения
 
                 For i As Integer = 0 To openfile.SafeFileNames.Count() - 1
                     ListBox1.Items.Add(openfile.SafeFileNames(i))
@@ -72,7 +79,9 @@ Public Class Form1
 
 
     ''' <summary>
-    ''' Как сортировать по значению?
+    ''' Сортировка с помощью массива
+    ''' arrayPush - с listView в массив;
+    ''' arrayPull - обратно в listView.
     ''' </summary>
     Public Sub sortColumnError()
         Try
@@ -82,6 +91,10 @@ Public Class Form1
             'Cчитать с listView в массив двумерный и
             'с массива считывать в listView по параметрам OK, порт и нет ответа
 
+            Dim deviceName As Integer, deviceReport As Integer
+
+            Dim arrayPush(deviceName, deviceReport)  'массив
+
 
 
         Catch ex As Exception
@@ -90,7 +103,7 @@ Public Class Form1
     End Sub
 
     ''' <summary>
-    ''' Берет название папки выбранных файлов
+    ''' ОК - берет название папки выбранных файлов
     ''' </summary>
     Public Sub findFolderName()
         Try
@@ -106,15 +119,14 @@ Public Class Form1
     End Sub
 
     ''' <summary>
-    ''' Выгрузка из таблицы в файл
+    ''' ОК - выгрузка из таблицы в файл
     ''' </summary>
     Public Sub exportToExcel()
         Try
             Dim objExcel As New Excel.Application
             Dim bkWorkBook As Excel.Workbook
             Dim shWorkSheet As Excel.Worksheet
-            Dim i As Integer
-            Dim j As Integer
+            Dim i As Integer, j As Integer
 
             objExcel = New Excel.Application
             bkWorkBook = objExcel.Workbooks.Add
@@ -142,7 +154,7 @@ Public Class Form1
     End Sub
 
     ''' <summary>
-    ''' Очистка по кнопке для повторного исрользования
+    ''' ОК - очистка по кнопке для повторного исрользования
     ''' </summary>
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
         ListBox1.Items.Clear()
