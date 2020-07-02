@@ -144,9 +144,8 @@ Public Class Form1
         Try
             Dim sortColumn As Integer = -1
 
-            ListView1.Sorting = SortOrder.Ascending
-            ListView1.Sort()
-            ListView1.ListViewItemSorter = New ListViewItemComparer(sortColumn, ListView1.Sorting)
+            'ListView1.Sorting = SortOrder.Ascending
+            'ListView1.Sort()
 
 
 
@@ -155,23 +154,62 @@ Public Class Form1
         End Try
     End Sub
 
-    Class ListViewItemComparer
-        Implements IComparer
+    ' Sorting Method
+    Dim m_SortingColumn As New ColumnHeader
+    Private Sub ListView1_ColumnClick(ByVal sender As _
+        System.Object, ByVal e As _
+        System.Windows.Forms.ColumnClickEventArgs) Handles _
+        ListView1.ColumnClick
 
-        Private col As Integer
+        ' Get the new sorting column.
+        Dim new_sorting_column As ColumnHeader =
+            ListView1.Columns(e.Column)
 
-        Public Sub New()
-            col = 0
-        End Sub
+        ' Figure out the new sorting order.
+        Dim sort_order As System.Windows.Forms.SortOrder
+        If m_SortingColumn Is Nothing Then
+            ' New column. Sort ascending.
+            sort_order = SortOrder.Ascending
+        Else
+            ' See if this is the same column.
+            If new_sorting_column.Equals(m_SortingColumn) Then
+                ' Same column. Switch the sort order.
+                If m_SortingColumn.Text.StartsWith("> ") Then
+                    sort_order = SortOrder.Descending
+                Else
+                    sort_order = SortOrder.Ascending
+                End If
+            Else
+                ' New column. Sort ascending.
+                sort_order = SortOrder.Ascending
+            End If
 
-        Public Sub New(ByVal column As Integer, sorting As SortOrder)
-            col = column
-        End Sub
+            ' Remove the old sort indicator.
+            m_SortingColumn.Text =
+                m_SortingColumn.Text.Substring(2)
+        End If
 
-        Public Function Compare(ByVal x As Object, ByVal y As Object) As Integer _
-           Implements IComparer.Compare
-            Return [String].Compare(CType(x, ListViewItem).SubItems(col).Text, CType(y, ListViewItem).SubItems(col).Text)
-        End Function
-    End Class
+        ' Display the new sort order.
+        m_SortingColumn = new_sorting_column
+        If sort_order = SortOrder.Ascending Then
+            m_SortingColumn.Text = "> " & m_SortingColumn.Text
+        Else
+            m_SortingColumn.Text = "< " & m_SortingColumn.Text
+        End If
+
+        ' Create a comparer.
+        ListView1.ListViewItemSorter = New _
+            ListViewComparer(e.Column, sort_order)
+
+        ' Sort.
+        ListView1.Sort()
+
+        ' Refresh resultTextBox
+        For Each item In ListView1.CheckedItems
+            Dim sitem As ListViewItem = item
+            sitem.Checked = False
+            sitem.Checked = True
+        Next
+    End Sub
 
 End Class
