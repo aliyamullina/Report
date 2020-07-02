@@ -21,3 +21,4 @@ C:\Users\User1_106\Desktop\Github\Report\Reports\obj\Debug\Reports.vbproj.Genera
 C:\Users\User1_106\Desktop\Github\Report\Reports\obj\Debug\Reports.exe
 C:\Users\User1_106\Desktop\Github\Report\Reports\obj\Debug\Reports.xml
 C:\Users\User1_106\Desktop\Github\Report\Reports\obj\Debug\Reports.pdb
+C:\Users\User1_106\Desktop\Github\Report\Reports\obj\Debug\Reports.vbproj.CoreCompileInputs.cache

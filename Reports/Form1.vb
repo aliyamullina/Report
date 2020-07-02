@@ -142,9 +142,36 @@ Public Class Form1
     ''' </summary>
     Public Sub sortColumnError()
         Try
+            Dim sortColumn As Integer = -1
+
+            ListView1.Sorting = SortOrder.Ascending
+            ListView1.Sort()
+            ListView1.ListViewItemSorter = New ListViewItemComparer(sortColumn, ListView1.Sorting)
+
+
 
         Catch ex As Exception
             MsgBox("Dont sorting " & ex.Message)
         End Try
     End Sub
+
+    Class ListViewItemComparer
+        Implements IComparer
+
+        Private col As Integer
+
+        Public Sub New()
+            col = 0
+        End Sub
+
+        Public Sub New(ByVal column As Integer, sorting As SortOrder)
+            col = column
+        End Sub
+
+        Public Function Compare(ByVal x As Object, ByVal y As Object) As Integer _
+           Implements IComparer.Compare
+            Return [String].Compare(CType(x, ListViewItem).SubItems(col).Text, CType(y, ListViewItem).SubItems(col).Text)
+        End Function
+    End Class
+
 End Class

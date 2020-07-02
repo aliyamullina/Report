@@ -39,13 +39,6 @@ Reports
  Открывать папку с файлом в конце
  </summary>
 </member>
-<member name="M:Reports.Form1.sortColumnError">
- <summary>
- ERROR - сортировка с помощью массива
- arrayPush - с listView в массив;
- arrayPull - обратно в listView.
- </summary>
-</member>
 <member name="M:Reports.Form1.findFolderName">
  <summary>
  ОК - берет название папки выбранных файлов
@@ -59,6 +52,11 @@ Reports
 <member name="M:Reports.Form1.ExitToolStripMenuItem_Click(System.Object,System.EventArgs)">
  <summary>
  ОК - очистка по кнопке для повторного исрользования
+ </summary>
+</member>
+<member name="M:Reports.Form1.sortColumnError">
+ <summary>
+ ERROR - сортировка
  </summary>
 </member>
 </members>
