@@ -51,10 +51,10 @@ Reports
 </member>
 <member name="M:Reports.Form1.ExitToolStripMenuItem_Click(System.Object,System.EventArgs)">
  <summary>
- ОК - очистка по кнопке для повторного исрользования
+ ОК - очистка по кнопке для повторного использования
  </summary>
 </member>
-<member name="M:Reports.Form1.sortColumnError">
+<member name="M:Reports.Form1.sortByError">
  <summary>
  ERROR - сортировка
  </summary>
