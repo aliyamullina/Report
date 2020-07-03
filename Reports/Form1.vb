@@ -149,12 +149,13 @@ Public Class Form1
         Try
             ListView1.Items.Clear()
             ListView1.Items.AddRange(itm)
+
             For i = 0 To ListView1.Items.Count - 1
                 For j = 0 To ListView1.Items(i).SubItems.Count - 1
                     If ListView1.Items(i).SubItems(j).Text.Contains(TextBox1.Text) Then
                         'отобразить сначала строки с [ОК]
-                        'потом с [нет ответа]
-                        'ошибка с [портом]
+                        'с [нет ответа]
+                        'с [портом]
 
                     End If
                 Next
