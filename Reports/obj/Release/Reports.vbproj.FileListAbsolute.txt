@@ -10,3 +10,15 @@ C:\Users\Packard\Downloads\Report\Reports\obj\Release\Reports.vbproj.CoreCompile
 C:\Users\Packard\Downloads\Report\Reports\obj\Release\Reports.exe
 C:\Users\Packard\Downloads\Report\Reports\obj\Release\Reports.xml
 C:\Users\Packard\Downloads\Report\Reports\obj\Release\Reports.pdb
+C:\Users\User1_106\Desktop\Github\Report\Reports\bin\Release\Reports.exe.config
+C:\Users\User1_106\Desktop\Github\Report\Reports\bin\Release\Reports.exe
+C:\Users\User1_106\Desktop\Github\Report\Reports\bin\Release\Reports.pdb
+C:\Users\User1_106\Desktop\Github\Report\Reports\bin\Release\Reports.xml
+C:\Users\User1_106\Desktop\Github\Report\Reports\obj\Release\Reports.vbprojAssemblyReference.cache
+C:\Users\User1_106\Desktop\Github\Report\Reports\obj\Release\Reports.Form1.resources
+C:\Users\User1_106\Desktop\Github\Report\Reports\obj\Release\Reports.Resources.resources
+C:\Users\User1_106\Desktop\Github\Report\Reports\obj\Release\Reports.vbproj.GenerateResource.cache
+C:\Users\User1_106\Desktop\Github\Report\Reports\obj\Release\Reports.vbproj.CoreCompileInputs.cache
+C:\Users\User1_106\Desktop\Github\Report\Reports\obj\Release\Reports.exe
+C:\Users\User1_106\Desktop\Github\Report\Reports\obj\Release\Reports.xml
+C:\Users\User1_106\Desktop\Github\Report\Reports\obj\Release\Reports.pdb
