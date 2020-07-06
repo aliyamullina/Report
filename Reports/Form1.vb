@@ -150,20 +150,29 @@ Public Class Form1
             ListView1.Items.Clear()
             ListView1.Items.AddRange(itm)
 
-            For i = 0 To ListView1.Items.Count - 1
-                For j = 0 To ListView1.Items(i).SubItems.Count - 1
-                    If ListView1.Items(i).SubItems(j).Text.Contains(TextBox1.Text) Then
-                        'отобразить сначала строки с [ОК]
-                        'с [нет ответа]
-                        'с [портом]
-
-                    End If
-                Next
-            Next
+            ListView1.Sorting = SortOrder.None
+            Dim sorter As New lvItemComparer
+            ListView1.ListViewItemSorter = sorter
+            ListView1.Sort()
 
         Catch ex As Exception
             MsgBox("Dont sorting " & ex.Message)
         End Try
     End Sub
+
+    Class lvItemComparer
+        Implements IComparer
+        Private col As Integer
+        Public Sub New()
+            col = 1
+        End Sub
+        Public Function Compare(ByVal x As Object, ByVal y As Object) As Integer Implements IComparer.Compare
+            Dim xx() As String = (CType(x, ListViewItem).SubItems(col).Text).Split({"-"c})
+            Dim yy() As String = (CType(y, ListViewItem).SubItems(col).Text).Split({"-"c})
+            Dim sx As String = xx(0) & "-" & xx(xx.Length - 1)
+            Dim sy As String = yy(0) & "-" & yy(yy.Length - 1)
+            Return String.Compare(sx, sy)
+        End Function
+    End Class
 
 End Class
