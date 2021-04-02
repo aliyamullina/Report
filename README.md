@@ -1,2 +1,2 @@
-# ReportsRES (pet-project)
+# ReportsRES
 ![App Screen](ScreenApp.jpg)
